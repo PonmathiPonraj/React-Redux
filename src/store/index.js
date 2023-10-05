@@ -5,29 +5,30 @@ const initialCounterState = {
     showCounter:true,
 };
 
-const counterSlice=createSlice({
-    name:'counter',
-    initialState:initialCounterState,
-    reducers:{
-        increment(state){
+const counterSlice = createSlice ({
+    name: 'counter',
+    initialState: initialCounterState,
+    reducers: {
+        increment(state) {
             state.counter++;
         },
-        decrement(state){
+        decrement(state) {
             state.counter--;
         },
-        toggleCounter(state){
+        toggleCounter(state) {
             state.showCounter=!state.showCounter;
         }
     }
 })
 
-const intialAuthState={
+const intialAuthState = {
     isAuthenthicated:false,
 }
-const authSlice=createSlice({
-    name:'authentication',
-    initialState:intialAuthState,
-    reducers:{
+
+const authSlice = createSlice({
+    name: 'authentication',
+    initialState: intialAuthState,
+    reducers: {
         isLogin(state){
             state.isAuthenthicated=true;
         },
@@ -39,8 +40,8 @@ const authSlice=createSlice({
   
 const store = configureStore({
     reducer: {
-        counter:counterSlice.reducer ,
-        auth:authSlice.reducer
+        counter: counterSlice.reducer ,
+        auth: authSlice.reducer
     }
 });
   
